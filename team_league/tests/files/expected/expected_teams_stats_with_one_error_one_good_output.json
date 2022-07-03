@@ -1,0 +1,14 @@
+[
+  {
+    "teamName": "Real",
+    "teamScore": 25,
+    "teamSlogan": "Hala Madrid",
+    "scoreStats": {
+      "topScorerFirstName": "Karim",
+      "topScorerLastName": "Benzema",
+      "topScorerGoalsNumber": 14,
+      "topScorerGamesNumber": 13,
+      "totalScoreNumber": 41
+    }
+  }
+]

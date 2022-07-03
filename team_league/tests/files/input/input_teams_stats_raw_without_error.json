@@ -1,0 +1,74 @@
+[
+  {
+    "teamName": "PSG",
+    "teamScore": 30,
+    "scorers": [
+      {
+        "scorerFirstName": "Kylian",
+        "scorerLastName": "Mbappe",
+        "goalsNumber": 15,
+        "gamesNumber": 13
+      },
+      {
+        "scorerFirstName": "Sa Silva",
+        "scorerLastName": "Neymar",
+        "goalsNumber": 11,
+        "gamesNumber": 12
+      },
+      {
+        "scorerFirstName": "Angel",
+        "scorerLastName": "Di Maria",
+        "goalsNumber": 7,
+        "gamesNumber": 13
+      },
+      {
+        "scorerFirstName": "Lionel",
+        "scorerLastName": "Messi",
+        "goalsNumber": 12,
+        "gamesNumber": 13
+      },
+      {
+        "scorerFirstName": "Marco",
+        "scorerLastName": "Verrati",
+        "goalsNumber": 3,
+        "gamesNumber": 13
+      }
+    ]
+  },
+  {
+    "teamName": "Real",
+    "teamScore": 25,
+    "scorers": [
+      {
+        "scorerFirstName": "Karim",
+        "scorerLastName": "Benzema",
+        "goalsNumber": 14,
+        "gamesNumber": 13
+      },
+      {
+        "scorerFirstName": "Junior",
+        "scorerLastName": "Vinicius",
+        "goalsNumber": 9,
+        "gamesNumber": 12
+      },
+      {
+        "scorerFirstName": "Luca",
+        "scorerLastName": "Modric",
+        "goalsNumber": 5,
+        "gamesNumber": 11
+      },
+      {
+        "scorerFirstName": "Silva",
+        "scorerLastName": "Rodrygo",
+        "goalsNumber": 7,
+        "gamesNumber": 13
+      },
+      {
+        "scorerFirstName": "Marco",
+        "scorerLastName": "Asensio",
+        "goalsNumber": 6,
+        "gamesNumber": 13
+      }
+    ]
+  }
+]
