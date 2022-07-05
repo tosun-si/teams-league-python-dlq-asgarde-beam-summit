@@ -5,13 +5,14 @@ import apache_beam as beam
 from apache_beam import PTransform
 from apache_beam.pvalue import PCollection
 
+from team_league.application.team_league_options import TeamLeagueNamesOptions
 from team_league.domain.team_stats import TeamStats
 
 
 class TeamStatsBigqueryWriteTransform(PTransform):
 
     def __init__(self,
-                 pipeline_options):
+                 pipeline_options: TeamLeagueNamesOptions):
         super().__init__()
         self.pipeline_options = pipeline_options
 
