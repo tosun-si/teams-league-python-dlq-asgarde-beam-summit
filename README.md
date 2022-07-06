@@ -10,7 +10,7 @@ python -m team_league.application.team_league_app \
     --runner=DataflowRunner \
     --staging_location=gs://mazlum_dev/dataflow/staging \
     --region=europe-west1 \
-    --job_type=team_league_ingestion_job \
+    --job_type=team_league_python_ingestion_job \
     --setup_file=./setup.py \
     --temp_location=gs://mazlum_dev/dataflow/temp \
     --team_league_dataset="mazlum_test" \
