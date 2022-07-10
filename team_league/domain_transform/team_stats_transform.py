@@ -17,7 +17,7 @@ class TeamStatsTransform(beam.PTransform):
             Tuple[PCollection[TeamStats], PCollection[Failure]]:
         result = (CollectionComposer.of(inputs)
                   .map("Validate raw fields", lambda t_raw: t_raw.validate_fields())
-                  .map("Compute team stats", TeamStats.computeTeamStats)
+                  .map("Compute team stats", TeamStats.compute_team_stats)
                   .map("Add slogan to team stats", lambda t_stats: t_stats.add_slogan_to_stats()))
 
         return result.outputs, result.failures

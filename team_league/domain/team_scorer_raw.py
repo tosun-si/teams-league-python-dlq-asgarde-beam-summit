@@ -5,5 +5,6 @@ from dataclasses import dataclass
 class TeamScorerRaw:
     scorerFirstName: str
     scorerLastName: str
-    goalsNumber: int
-    gamesNumber: int
+    goals: int
+    goalAssists: int
+    games: int

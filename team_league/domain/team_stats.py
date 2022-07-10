@@ -3,9 +3,10 @@ from __future__ import annotations
 from dataclasses import dataclass, replace
 from typing import List
 
-from team_league.domain.team_score_stats import TeamScoreStats
+from team_league.domain.team_best_passer_stats import TeamBestPasserStats
 from team_league.domain.team_scorer_raw import TeamScorerRaw
 from team_league.domain.team_stats_raw import TeamStatsRaw
+from team_league.domain.team_top_scorer_stats import TeamTopScorerStats
 
 TEAM_SLOGANS = {
     "PSG": "Paris est magique",
@@ -17,28 +18,39 @@ TEAM_SLOGANS = {
 class TeamStats:
     teamName: str
     teamScore: int
+    teamTotalGoals: int
     teamSlogan: str
-    scoreStats: TeamScoreStats
+    topScorerStats: TeamTopScorerStats
+    bestPasserStats: TeamBestPasserStats
 
     @staticmethod
-    def computeTeamStats(team_stats_raw: TeamStatsRaw) -> TeamStats:
+    def compute_team_stats(team_stats_raw: TeamStatsRaw) -> TeamStats:
         team_scorers: List[TeamScorerRaw] = team_stats_raw.scorers
-        top_scorer: TeamScorerRaw = max(team_scorers, key=lambda team_scorer: team_scorer.goalsNumber)
+        top_scorer: TeamScorerRaw = max(team_scorers, key=lambda team_scorer: team_scorer.goals)
+        best_passer: TeamScorerRaw = max(team_scorers, key=lambda team_scorer: team_scorer.goalAssists)
 
-        total_score_team: int = sum(map(lambda t: t.goalsNumber, team_scorers))
+        team_total_goals: int = sum(map(lambda t: t.goals, team_scorers))
 
-        scoreStats: TeamScoreStats = TeamScoreStats(
-            topScorerFirstName=top_scorer.scorerFirstName,
-            topScorerLastName=top_scorer.scorerLastName,
-            topScorerGoalsNumber=top_scorer.goalsNumber,
-            topScorerGamesNumber=top_scorer.gamesNumber,
-            totalScoreNumber=total_score_team)
+        top_scorer_stats = TeamTopScorerStats(
+            firstName=top_scorer.scorerFirstName,
+            lastName=top_scorer.scorerLastName,
+            goals=top_scorer.goals,
+            games=top_scorer.games
+        )
+        best_passer_stats = TeamBestPasserStats(
+            firstName=best_passer.scorerFirstName,
+            lastName=best_passer.scorerLastName,
+            goalAssists=best_passer.goalAssists,
+            games=best_passer.games
+        )
 
         return TeamStats(
             teamName=team_stats_raw.teamName,
             teamScore=team_stats_raw.teamScore,
             teamSlogan='',
-            scoreStats=scoreStats
+            teamTotalGoals=team_total_goals,
+            topScorerStats=top_scorer_stats,
+            bestPasserStats=best_passer_stats
         )
 
     def add_slogan_to_stats(self) -> TeamStats:

@@ -2,13 +2,19 @@
   {
     "teamName": "Real",
     "teamScore": 25,
+    "teamTotalGoals": 41,
     "teamSlogan": "Hala Madrid",
-    "scoreStats": {
-      "topScorerFirstName": "Karim",
-      "topScorerLastName": "Benzema",
-      "topScorerGoalsNumber": 14,
-      "topScorerGamesNumber": 13,
-      "totalScoreNumber": 41
+    "topScorerStats": {
+      "firstName": "Karim",
+      "lastName": "Benzema",
+      "goals": 14,
+      "games": 13
+    },
+    "bestPasserStats": {
+      "firstName": "Luca",
+      "lastName": "Modric",
+      "goalAssists": 9,
+      "games": 11
     }
   }
 ]

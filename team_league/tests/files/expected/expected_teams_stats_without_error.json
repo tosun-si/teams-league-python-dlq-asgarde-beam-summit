@@ -2,25 +2,37 @@
   {
     "teamName": "PSG",
     "teamScore": 30,
+    "teamTotalGoals": 48,
     "teamSlogan": "Paris est magique",
-    "scoreStats": {
-      "topScorerFirstName": "Kylian",
-      "topScorerLastName": "Mbappe",
-      "topScorerGoalsNumber": 15,
-      "topScorerGamesNumber": 13,
-      "totalScoreNumber": 48
+    "topScorerStats": {
+      "firstName": "Kylian",
+      "lastName": "Mbappe",
+      "goals": 15,
+      "games": 13
+    },
+    "bestPasserStats": {
+      "firstName": "Marco",
+      "lastName": "Verrati",
+      "goalAssists": 10,
+      "games": 13
     }
   },
   {
     "teamName": "Real",
     "teamScore": 25,
+    "teamTotalGoals": 41,
     "teamSlogan": "Hala Madrid",
-    "scoreStats": {
-      "topScorerFirstName": "Karim",
-      "topScorerLastName": "Benzema",
-      "topScorerGoalsNumber": 14,
-      "topScorerGamesNumber": 13,
-      "totalScoreNumber": 41
+    "topScorerStats": {
+      "firstName": "Karim",
+      "lastName": "Benzema",
+      "goals": 14,
+      "games": 13
+    },
+    "bestPasserStats": {
+      "firstName": "Luca",
+      "lastName": "Modric",
+      "goalAssists": 9,
+      "games": 11
     }
   }
 ]
