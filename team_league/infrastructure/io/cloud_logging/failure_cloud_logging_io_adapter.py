@@ -1,6 +1,6 @@
 from apache_beam import PTransform
 
-from team_league.domain_transform.failure_log_io_connector import FailureLogIOConnector
+from team_league.domain_ptransform.failure_log_io_connector import FailureLogIOConnector
 from team_league.infrastructure.io.cloud_logging.failure_cloud_logging_write_transform import \
     FailureCloudLoggingWriteTransform
 

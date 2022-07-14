@@ -4,7 +4,7 @@ import apache_beam as beam
 from apache_beam import PCollection
 from asgarde.failure import Failure
 
-from team_league.application.team_league_options import TeamLeagueNamesOptions
+from team_league.application.pipeline_conf import PipelineConf
 from team_league.infrastructure.io.bigquery.failure_table_fields import FailureTableFields
 from team_league.infrastructure.io.failure_helper import get_failure_error
 
@@ -15,25 +15,25 @@ class FailureBigqueryWriteTransform(beam.PTransform):
     """
 
     def __init__(self,
-                 pipeline_options: TeamLeagueNamesOptions):
+                 pipeline_conf: PipelineConf):
         super().__init__()
-        self.pipeline_options = pipeline_options
+        self.pipeline_conf = pipeline_conf
 
     def expand(self, inputs_failures: PCollection[Failure]):
         return (inputs_failures
                 | 'Map to failure table fields' >> beam.Map(self.to_failure_table_fields)
                 | "Sink failures to Bigquery" >> beam.io.WriteToBigQuery(
-                    project=self.pipeline_options.project_id,
-                    dataset=self.pipeline_options.failure_output_dataset,
-                    table=self.pipeline_options.failure_output_table,
+                    project=self.pipeline_conf.project_id,
+                    dataset=self.pipeline_conf.failure_output_dataset,
+                    table=self.pipeline_conf.failure_output_table,
                     create_disposition=beam.io.BigQueryDisposition.CREATE_NEVER,
                     write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND)
                 )
 
     def to_failure_table_fields(self, failure: Failure):
         return {
-            FailureTableFields.FEATURE_NAME.value: self.pipeline_options.failure_feature_name,
-            FailureTableFields.JOB_NAME.value: self.pipeline_options.job_type,
+            FailureTableFields.FEATURE_NAME.value: self.pipeline_conf.failure_feature_name,
+            FailureTableFields.JOB_NAME.value: self.pipeline_conf.job_type,
             FailureTableFields.PIPELINE_STEP.value: failure.pipeline_step,
             FailureTableFields.INPUT_ELEMENT.value: failure.input_element,
             FailureTableFields.EXCEPTION_TYPE.value: type(failure.exception).__name__,

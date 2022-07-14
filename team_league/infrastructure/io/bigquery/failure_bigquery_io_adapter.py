@@ -1,6 +1,6 @@
 from apache_beam import PTransform
 
-from team_league.domain_transform.failure_database_io_connector import FailureDatabaseIOConnector
+from team_league.domain_ptransform.failure_database_io_connector import FailureDatabaseIOConnector
 from team_league.infrastructure.io.bigquery.failure_bigquery_write_transform import FailureBigqueryWriteTransform
 
 

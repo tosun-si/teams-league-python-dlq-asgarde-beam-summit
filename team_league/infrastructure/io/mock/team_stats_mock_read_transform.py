@@ -24,7 +24,7 @@ real_scorers: List[TeamScorerRaw] = [
 ]
 
 team_stats: List[TeamStatsRaw] = [
-    TeamStatsRaw(teamName="PSG", teamScore=30, scorers=psg_scorers),
+    TeamStatsRaw(teamName="", teamScore=30, scorers=psg_scorers),
     TeamStatsRaw(teamName="Real", teamScore=25, scorers=real_scorers)
 ]
 
