@@ -13,6 +13,7 @@ python -m team_league.application.team_league_app \
     --job_type=team_league_python_ingestion_job \
     --setup_file=./setup.py \
     --temp_location=gs://mazlum_dev/dataflow/temp \
+    --input_file_slogans=gs://mazlum_dev/team_league/input/json/input_team_slogans.json \
     --team_league_dataset="mazlum_test" \
     --team_stats_table="team_stat" \
     --failure_output_dataset="mazlum_test" \
